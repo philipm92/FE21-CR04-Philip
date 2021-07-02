@@ -44,13 +44,13 @@ for (let movie of movie_list) {
 
     // Fixed solution because time...
     movie_string += `
-    <div class="col-md-5">
+    <div class="col-md-5 my-auto">
         <img src="${movie["image"]}" class="img-fluid" alt="${movie["moviename"]}">
     </div>
     <div class="col-md-7 m-0 p-0">
         <div class="card-body m-0 p-2">
             <h5 class="card-title text-center">${movie["moviename"]}</h5>
-            <p class="card-text mx-auto"><small>${movie["description"]}</small></p>
+            <p class="card-text p-1"><small>${movie["description"]}</small></p>
             <div class="d-flex flex-row justify-content-center align-items-center justify-content-md-end">
                 <div class="card-text align-self-center align-self-md-end own-like-text-color text-center m-2 m-md-1">Like</div>
                 <div class="card-text align-self-center align-self-md-end own-like-text-color text-center m-2 m-md-1">

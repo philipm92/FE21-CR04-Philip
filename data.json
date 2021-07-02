@@ -1,12 +1,12 @@
 var movies = `[
     {
-        "moviename": "A Star is Born",
+        "moviename": "Hungry for Change",
     
-        "image": "img/test_star.jpg",
+        "image": "img/Hungry_For_Change.jpg",
     
-        "description": "Short description",
+        "description": "Exposes shocking secrets the diet, weight loss and food industries don't want you to know about deceptive strategies designed to keep you coming back for more. Find out what's keeping you from having the body and health you deserve.",
     
-        "likes": 0
+        "likes": 2
     },
 
     {
@@ -14,80 +14,80 @@ var movies = `[
     
         "image": "img/Detective_Conan_Movie_24.jpg",
     
-        "description": "Short description",
+        "description": "The Scarlet Bullet[1] is the 24th movie in the Detective Conan franchise. It was originally scheduled to be released in Japan on April 17, 2020, which made it the first movie to premiere in the Reiwa period, but was postponed due to the ongoing COVID-19 pandemic. ",
     
         "likes": 9
     },
     
     
     {
-        "moviename": "C Star is Born",
+        "moviename": "The Dark Knight",
     
-        "image": "img/test_star.jpg",
+        "image": "img/The_Dark_Knight.jpg",
     
-        "description": "Short description",
+        "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
     
         "likes": 6
     },
 
     {
-        "moviename": "D Star is Born",
+        "moviename": "Year One",
     
-        "image": "img/test_star.jpg",
+        "image": "img/Year_One.jpg",
     
-        "description": "Short description",
+        "description": "Year One is a 2009 American adventure comedy film directed by Harold Ramis and distributed by Columbia Pictures. The film was written by Harold Ramis, Gene Stupnitsky, and Lee Eisenberg and stars Jack Black and Michael Cera.",
     
         "likes": 8
     }, 
     
     
     {
-        "moviename": "E Star is Born",
+        "moviename": "Ted",
     
-        "image": "img/test_star.jpg",
+        "image": "img/Ted_Movie.jpg",
     
-        "description": "Short description",
+        "description": "John Bennett, a man whose childhood wish of bringing his teddy bear to life came true, now must decide between keeping the relationship with the bear, Ted or his girlfriend, Lori.",
     
         "likes": 0
     },
     
     {
-        "moviename": "F Star is Born",
+        "moviename": "American Psycho",
     
-        "image": "img/test_star.jpg",
+        "image": "img/American_Psycho.jpg",
     
-        "description": "Short description",
+        "description": "In 1987, wealthy New York investment banker Patrick Bateman's life revolves around dining at trendy restaurants while keeping up appearances for his fiancée Evelyn and his circle of wealthy and shallow associates, most of whom he hates.",
     
         "likes": 9
     }, 
     
     
     {
-        "moviename": "G Star is Born",
+        "moviename": "Cruel Intentions",
     
-        "image": "img/test_star.jpg",
+        "image": "img/Cruel_Intentions.jpg",
     
-        "description": "Short description",
+        "description": "In an upscale New York City mansion, wealthy and popular teenager Kathryn Merteuil discusses her prep school with Mrs. Caldwell and her daughter, Cecile. Kathryn promises Mrs. Caldwell that she will look out for the naive Cecile.",
     
         "likes": 10
     },
 
     {
-        "moviename": "H Star is Born",
+        "moviename": "The Trueman Show",
     
-        "image": "img/test_star.jpg",
+        "image": "img/The_Trueman_Show.jpg",
     
-        "description": "Short description",
+        "description": "Truman Burbank is the cheerful and unsuspecting star of The Truman Show, a reality television program filmed through thousands of hidden cameras 24 hours a day and broadcast to a worldwide audience.",
     
         "likes": 5
     },
 
     {
-        "moviename": "I Star is Born",
+        "moviename": "Yu-Gi-Oh Pyramide of Light",
     
-        "image": "img/test_star.jpg",
+        "image": "img/Yugioh_PoL.jpg",
     
-        "description": "Short description",
+        "description": "Five thousand years ago, an unnamed heroic Pharaoh imprisoned Anubis, the Egyptian lord of the dead, after he tried to destroy the world by persuading the kings to play the mysterious Shadow Games.",
     
         "likes": 9
     }
