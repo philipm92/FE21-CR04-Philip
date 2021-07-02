@@ -1,0 +1,20 @@
+// background color values
+$bg-red-value: 29;
+$bg-blue-value: 35;
+$bg-green-value: 41;
+$bg-alpha-value: 1;
+$bg-color: rgba($bg-red-value, $bg-blue-value, $bg-green-value, $bg-alpha-value);
+
+// container color values
+$container-red-value: 0;
+$container-blue-value: 0;
+$container-green-value: 0;
+$container-alpha-value: 1;
+$container-color: rgba($container-red-value, $container-blue-value, $container-green-value, $container-alpha-value);
+
+// like color-bg values
+$like-red-value: 50;
+$like-blue-value: 162;
+$like-green-value: 61;
+$like-alpha-value: 1;
+$like-color: rgba($like-red-value, $like-blue-value, $like-green-value, $like-alpha-value);

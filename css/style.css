@@ -1,0 +1,56 @@
+body {
+  font-family: "Open Sans", Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto, Impact, Haettenschweiler, sans-serif !important;
+  font-weight: bolder !important;
+}
+
+.own-bg-color {
+  background-color: #1d2329 !important;
+}
+
+.own-cn-color {
+  background-color: black !important;
+}
+
+.own-like-bg-color {
+  background-color: #32a23d !important;
+}
+
+.own-like-text-color {
+  color: #32a23d !important;
+}
+
+.own-circle-size {
+  width: 3rem !important;
+  height: 3rem !important;
+  line-height: 3rem !important;
+  border-radius: 50% !important;
+  background: #32a23d !important;
+}
+
+.own-svg-size {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+#moviecards {
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .own-circle-size {
+    width: 2rem !important;
+    height: 2rem !important;
+    line-height: 2rem !important;
+    border-radius: 50% !important;
+    background: #32a23d !important;
+  }
+  .own-svg-size {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

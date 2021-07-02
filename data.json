@@ -1,0 +1,96 @@
+var movies = `[
+    {
+        "moviename": "A Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 0
+    },
+
+    {
+        "moviename": "Detective Conan Movie 24",
+    
+        "image": "img/Detective_Conan_Movie_24.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 9
+    },
+    
+    
+    {
+        "moviename": "C Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 6
+    },
+
+    {
+        "moviename": "D Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 8
+    }, 
+    
+    
+    {
+        "moviename": "E Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 0
+    },
+    
+    {
+        "moviename": "F Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 9
+    }, 
+    
+    
+    {
+        "moviename": "G Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 10
+    },
+
+    {
+        "moviename": "H Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 5
+    },
+
+    {
+        "moviename": "I Star is Born",
+    
+        "image": "img/test_star.jpg",
+    
+        "description": "Short description",
+    
+        "likes": 9
+    }
+    
+]`;
+
