@@ -2,7 +2,7 @@ var movies = `[
     {
         "moviename": "Hungry for Change",
     
-        "image": "img/Hungry_For_Change.jpg",
+        "image": "img/Hungry_For_Change_new.jpg",
     
         "description": "Exposes shocking secrets the diet, weight loss and food industries don't want you to know about deceptive strategies designed to keep you coming back for more. Find out what's keeping you from having the body and health you deserve.",
     
@@ -12,9 +12,9 @@ var movies = `[
     {
         "moviename": "Detective Conan Movie 24",
     
-        "image": "img/Detective_Conan_Movie_24.jpg",
+        "image": "img/Detective_Conan_Movie_24_new.jpg",
     
-        "description": "The Scarlet Bullet[1] is the 24th movie in the Detective Conan franchise. It was originally scheduled to be released in Japan on April 17, 2020, which made it the first movie to premiere in the Reiwa period, but was postponed due to the ongoing COVID-19 pandemic. ",
+        "description": "The Scarlet Bullet[1] is the 24th movie in the Detective Conan franchise. On March 24, 2021, the movie was announced to be screened in IMAX, MX4D, 4DX, and DOLBY CINEMA.",
     
         "likes": 9
     },
@@ -23,7 +23,7 @@ var movies = `[
     {
         "moviename": "The Dark Knight",
     
-        "image": "img/The_Dark_Knight.jpg",
+        "image": "img/The_Dark_Knight_new.jpg",
     
         "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
     
@@ -33,7 +33,7 @@ var movies = `[
     {
         "moviename": "Year One",
     
-        "image": "img/Year_One.jpg",
+        "image": "img/Year_One_new.jpg",
     
         "description": "Year One is a 2009 American adventure comedy film directed by Harold Ramis and distributed by Columbia Pictures. The film was written by Harold Ramis, Gene Stupnitsky, and Lee Eisenberg and stars Jack Black and Michael Cera.",
     
@@ -44,7 +44,7 @@ var movies = `[
     {
         "moviename": "Ted",
     
-        "image": "img/Ted_Movie.jpg",
+        "image": "img/Ted_Movie_new.jpg",
     
         "description": "John Bennett, a man whose childhood wish of bringing his teddy bear to life came true, now must decide between keeping the relationship with the bear, Ted or his girlfriend, Lori.",
     
@@ -54,7 +54,7 @@ var movies = `[
     {
         "moviename": "American Psycho",
     
-        "image": "img/American_Psycho.jpg",
+        "image": "img/American_Psycho_new.jpg",
     
         "description": "In 1987, wealthy New York investment banker Patrick Bateman's life revolves around dining at trendy restaurants while keeping up appearances for his fiancée Evelyn and his circle of wealthy and shallow associates, most of whom he hates.",
     
@@ -65,7 +65,7 @@ var movies = `[
     {
         "moviename": "Cruel Intentions",
     
-        "image": "img/Cruel_Intentions.jpg",
+        "image": "img/Cruel_Intentions_new.jpg",
     
         "description": "In an upscale New York City mansion, wealthy and popular teenager Kathryn Merteuil discusses her prep school with Mrs. Caldwell and her daughter, Cecile. Kathryn promises Mrs. Caldwell that she will look out for the naive Cecile.",
     
@@ -75,7 +75,7 @@ var movies = `[
     {
         "moviename": "The Trueman Show",
     
-        "image": "img/The_Trueman_Show.jpg",
+        "image": "img/The_Trueman_Show_new.jpg",
     
         "description": "Truman Burbank is the cheerful and unsuspecting star of The Truman Show, a reality television program filmed through thousands of hidden cameras 24 hours a day and broadcast to a worldwide audience.",
     
@@ -83,9 +83,9 @@ var movies = `[
     },
 
     {
-        "moviename": "Yu-Gi-Oh Pyramide of Light",
+        "moviename": "Yu-Gi-Oh The Movie",
     
-        "image": "img/Yugioh_PoL.jpg",
+        "image": "img/Yugioh_PoL_new.jpg",
     
         "description": "Five thousand years ago, an unnamed heroic Pharaoh imprisoned Anubis, the Egyptian lord of the dead, after he tried to destroy the world by persuading the kings to play the mysterious Shadow Games.",
     

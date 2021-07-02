@@ -36,10 +36,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 3rem !important;
 }
 
-#moviecards {
-  margin: 0 !important;
-}
-
 @media screen and (min-width: 768px) {
   .own-circle-size {
     width: 2rem !important;
