@@ -15,20 +15,19 @@ function IncreaseLikes(index) {
 
 var is_sort = false;
 var iclick = 0; // count current click
-function SortMovies() {
-    console.log(sort_id_element.getElementsByClassName("path"));
+function SortMovies() {  
     switch (iclick%3) {
         case 0: // high to low
             is_sort = true;
             movie_list.sort((a, b) => {
                 return b["likes"] - a["likes"];
-            });            
+            });         
             break;
         case 1: // low to high
             is_sort = true;
             movie_list.sort((a, b) => {
                 return a["likes"] - b["likes"];
-            });          
+            });      
             break;
         default: // restored
             is_sort = false;
@@ -101,10 +100,7 @@ document.getElementById("sortarea").innerHTML = `
             </div>
             <div class="btn text-white col align-self-center text-end m-1 p-0" id="ownSorting">
                 <div class="d-flex flex-row justify-content-center justify-content-md-end m-0 p-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="align-self-center  m-0 p-0 bi bi-caret-up-fill" viewBox="0 0 16 16">
-                        <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                    </svg>
-                    <h4 class="align-self-center m-0 p-0">Sort</h4> 
+                    <h4 class="align-self-center m-0 p-0">Sorting</h4> 
                 </div>
             </div>
         </div>
