@@ -16,15 +16,35 @@ function IncreaseLikes(index) {
 
 }
 
-// function SortMovies(movies) {}
 var is_sort = false;
+function SortMovies() {
+    is_sort = true;
+    // assuming movies are always stored in localstorage by now
+    // var all_ls_keys = Object.keys(localStorage);
+    movie_list.sort((a, b) => {
+        return b["likes"] - a["likes"];
+    }); 
+    for (let movie in movie_list) {
+        let ls_key = movie["moviename"] + "_storage";
+        localStorage.setItem(ls_key, JSON.stringify(movie) )
+    }
+    
+    // let ls_key = movie_list[0]["moviename"] + "_storage";
+    // let ls_movie_list = JSON.parse( localStorage.getItem(ls_key) );
+    // console.log();
+    // ls_movie_list.sort((a, b) => {
+    //     return a["likes"] - b["likes"];
+    // });    
+    CreateMovieCards();
+}
+
 
 // .sort((a, b) => {
 //     return a.age - b.age;
 // });
+var movie_id_element = document.getElementById("moviecards");
 const CreateMovieCards = () => {
-    var movie_id_element = document.getElementById("moviecards");
-
+    movie_id_element.innerHTML = "";
     var movie_string = "<div class=\"row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mx-1 mx-lg-4 mb-4\">"; // START MOVIE GRID
     for (let movie of movie_list) {
         // let keys = Object.keys(movie); // get keys from dictionary
@@ -36,8 +56,10 @@ const CreateMovieCards = () => {
         console.log(typeof(localStorage[ls_key]));
         
         if (typeof(localStorage[ls_key]) == "undefined" && !is_sort) localStorage.setItem(ls_key, JSON.stringify(movie) );
+        // if (is_sort) {
 
-        console.log(typeof(localStorage[ls_key]));
+        // }
+        console.log(typeof(localStorage[ls_key]), is_sort);
 
         // get movie object from local storage to put them into the div
         ls_movie_list = JSON.parse( localStorage.getItem(ls_key) );
@@ -78,6 +100,13 @@ const CreateMovieCards = () => {
 
     movie_string += "</div>"; // END MOVIE GRID
     movie_id_element.innerHTML += movie_string;
+
+    var like_class_elements = document.getElementsByClassName("ownLikeClick");
+    for (let i=0; i < like_class_elements.length; i++) {
+        like_class_elements[i].addEventListener("click", function () {
+            IncreaseLikes(i);
+        })
+    }    
 }
 
 
@@ -104,7 +133,8 @@ document.getElementById("sortarea").innerHTML = `
 
 var sort_id_element = document.getElementById("ownSorting");
 sort_id_element.addEventListener("click", function () {
-    alert("I am the sort button");
+    SortMovies();
+    alert("I am the sort button: " + is_sort);
 })
 
 // var movie_id_element = document.getElementById("moviecards")
@@ -151,14 +181,15 @@ sort_id_element.addEventListener("click", function () {
 //     movie_string += "</div>"; // End column-container for each movie
 // }
 
-CreateMovieCards();
+// console.log(movie_id_element.innerHTML.length == 0);
+if (movie_id_element.innerHTML.length == 0) CreateMovieCards();
 
-var like_class_elements = document.getElementsByClassName("ownLikeClick");
-for (let i=0; i < like_class_elements.length; i++) {
-    like_class_elements[i].addEventListener("click", function () {
-        IncreaseLikes(i);
-    })
-}
+// var like_class_elements = document.getElementsByClassName("ownLikeClick");
+// for (let i=0; i < like_class_elements.length; i++) {
+//     like_class_elements[i].addEventListener("click", function () {
+//         IncreaseLikes(i);
+//     })
+// }
 
 
 
