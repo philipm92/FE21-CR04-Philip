@@ -1,81 +1,69 @@
 var movie_list = JSON.parse(movies); // convert string into an object
-const movie_list_backup = JSON.parse(movies); // backup original movie list for sorting later on
-
-// Store movie object in local storage
-const localstorage_key = "movie_storage";
-
-// check if movie is set in storage
-console.log(typeof(localStorage[localstorage_key]));    
-if (typeof(localStorage[localstorage_key]) == "undefined") localStorage.setItem(localstorage_key, JSON.stringify(movie_list) );
-console.log( typeof(localStorage[localstorage_key]) );
-
-// get movie object from local storage to put them into the div
-localstorage_movie_list = JSON.parse( localStorage.getItem(localstorage_key) );
-
-// store number of clicks on sort button
-if (typeof(localStorage["iclick"]) == "undefined") localStorage.setItem("iclick", "0");
+const movie_list_backup = JSON.parse(movies);
 
 function IncreaseLikes(index) {
-    // assuming movies are always stored in localstorage by now
-    localstorage_movie_list[index]["likes"]++;
+    // increase current like by 1
+    movie_list[index]["likes"]++;
 
-    // parse back to storage
-    localStorage.setItem(localstorage_key, JSON.stringify(localstorage_movie_list));
+    // log for debugging
+    console.log(movie_list[index]["moviename"], movie_list[index]["likes"]);
 
-    console.log(localstorage_movie_list[index]["likes"], localstorage_movie_list[index]["moviename"]);
-    document.getElementsByClassName("own-circle-size")[index].innerHTML = JSON.parse(localStorage.getItem(localstorage_key))[index]["likes"];
+    // update current like-count
+    document.getElementsByClassName("own-circle-size")[index].innerHTML = movie_list[index]["likes"];
 
 }
 
-var is_sort = false; // variable is not necessary anymore, but I still keep it just in case
+var is_sort = false;
+var iclick = 0; // count current click
 function SortMovies() {
-    is_sort = true;
     icon_id_element = document.getElementById("SortingIcon"); 
-    // also buggy in local storage version
-    let iclick = Number( localStorage.getItem("iclick") );
-    switch(iclick%3) {
+    // the icon switch is a bit buggy, but the first few times work fine. No idea why I already tried several things
+    console.log(iclick%3);
+    switch (iclick%3) {
         case 0: // high to low
-            localstorage_movie_list.sort((a, b) => {
+            is_sort = true;
+            movie_list.sort((a, b) => {
                 return b["likes"] - a["likes"];
             });
             // set correct icon
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
             <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-          </svg>`;
+            </svg>`;
+            iclick++;    
             break;
         case 1: // low to high
-            localstorage_movie_list.sort((a, b) => {
+            is_sort = true;
+            movie_list.sort((a, b) => {
                 return a["likes"] - b["likes"];
-            });
+            }); 
             // set correct icon
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
             </svg>`;
+            iclick++;
             break;
-        case 2: // default
-            localstorage_movie_list = movie_list_backup;
+        case 2: // restored
             is_sort = false;
-            console.log(false);
+            movie_list = movie_list_backup;
             // set correct icon
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
             <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
-            </svg>`;            
+            </svg>`;
+            iclick++;
             break;
-        default: //error handling reset everything, pretty much same as case above
-            localstorage_movie_list = movie_list_backup;
+        default: // error handling reset everything
             is_sort = false;
+            movie_list = movie_list_backup;
             // set correct icon
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
             <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
-            </svg>`;            
-            iclick = 0;         
+            </svg>`;
+            iclick = 0;
+
     }
-    console.log(localStorage["iclick"], Number(localStorage["iclick"])%3);
-    iclick++;
-    localStorage.setItem("iclick", iclick);
-    // parse back to storage
-    localStorage.setItem(localstorage_key, JSON.stringify(localstorage_movie_list)); 
+    
     CreateMovieCards();
+    
 }
 
 
@@ -83,11 +71,10 @@ var movie_id_element = document.getElementById("moviecards");
 const CreateMovieCards = () => {
     movie_id_element.innerHTML = "";
     var movie_string = "<div class=\"row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mx-1 mx-lg-4 mb-4\">"; // START MOVIE GRID
-    for (let movie of localstorage_movie_list) {
+    for (let movie of movie_list) {
         movie_string += "<div class=\"col\">"; // Start column-container for each movie
         movie_string += "   <div class=\"card h-100 p-2 own-cn-color text-white\">"; // Start styling movie card
         movie_string += "       <div class=\"row g-0\">"; // start row for card to get side-by-side look w/ >= tablet
-    
     
         // Fixed solution because time...
         movie_string += `
@@ -144,21 +131,24 @@ document.getElementById("sortarea").innerHTML = `
                     <div id="SortingIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
                     <path d="m0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
                   </svg></div>
-                    <h4 class="align-self-center m-0 p-0">Sorting</h4> 
+                  <h4 class="align-self-center m-0 p-0">Sorting</h4>
                 </div>
             </div>
         </div>
     </div>   
     `;
 
+
+// create movie cards on refresh
+if (movie_id_element.innerHTML.length == 0) CreateMovieCards();
+
 var sort_id_element = document.getElementById("ownSorting");
 sort_id_element.addEventListener("click", function () {
     SortMovies();
-    // alert("I am the sort button: " + is_sort);
 })
 
 
-if (movie_id_element.innerHTML.length == 0) CreateMovieCards();
+
 
 
 

@@ -14,7 +14,7 @@ var movies = `[
     
         "image": "img/Detective_Conan_Movie_24_new.jpg",
     
-        "description": "The Scarlet Bullet[1] is the 24th movie in the Detective Conan franchise. On March 24, 2021, the movie was announced to be screened in IMAX, MX4D, 4DX, and DOLBY CINEMA.",
+        "description": "The Scarlet Bullet is the 24th movie in the Detective Conan franchise. On March 24, 2021, the movie was announced to be screened in IMAX, MX4D, 4DX, and DOLBY CINEMA.",
     
         "likes": 9
     },
