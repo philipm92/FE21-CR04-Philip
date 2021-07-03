@@ -15,27 +15,50 @@ function IncreaseLikes(index) {
 
 var is_sort = false;
 var iclick = 0; // count current click
-function SortMovies() {  
+function SortMovies() {
+    icon_id_element = document.getElementById("SortingIcon"); 
+    // the icon switch is a bit buggy, but the first few times work fine. No idea why I already tried several things
+    console.log(iclick%3);
     switch (iclick%3) {
         case 0: // high to low
             is_sort = true;
             movie_list.sort((a, b) => {
                 return b["likes"] - a["likes"];
-            });         
+            });
+            icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>`;
+            iclick++;      
             break;
         case 1: // low to high
             is_sort = true;
             movie_list.sort((a, b) => {
                 return a["likes"] - b["likes"];
-            });      
+            });  
+            icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+            <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
+          </svg>`;
+            iclick++;
             break;
-        default: // restored
+        case 2: // restored
             is_sort = false;
             movie_list = movie_list_backup;
-    }
+            icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>`;
+            iclick = 0;
+            break;
+        default: // error handling reset everything
+            is_sort = false;
+            movie_list = movie_list_backup;
+            icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>`;
+            iclick = 0;
 
+    }
     CreateMovieCards();
-    iclick++;
+    
 }
 
 
@@ -100,7 +123,10 @@ document.getElementById("sortarea").innerHTML = `
             </div>
             <div class="btn text-white col align-self-center text-end m-1 p-0" id="ownSorting">
                 <div class="d-flex flex-row justify-content-center justify-content-md-end m-0 p-0">
-                    <h4 class="align-self-center m-0 p-0">Sorting</h4> 
+                    <div id="SortingIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                    <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                  </svg></div>
+                  <h4 class="align-self-center m-0 p-0">Sorting</h4>
                 </div>
             </div>
         </div>
