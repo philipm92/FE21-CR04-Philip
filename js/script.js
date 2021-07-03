@@ -5,14 +5,14 @@ function IncreaseLikes(index) {
     // assuming movies are always stored in localstorage by now
     let ls_key = movie_list[index]["moviename"] + "_storage";
     let ls_movie_list = JSON.parse( localStorage.getItem(ls_key) );
-    ls_movie_list["likes"]++;
+    movie_list[index]["likes"]++;
 
     // parse back to storage
     localStorage.setItem(ls_key, JSON.stringify(ls_movie_list));
 
     console.log(ls_movie_list["likes"], typeof(ls_movie_list["likes"]));
     // document.getElementsByClassName("own-circle-size")[index].innerHTML = ls_movie_list["likes"];
-    document.getElementsByClassName("own-circle-size")[index].innerHTML = JSON.parse(localStorage.getItem(ls_key))["likes"];
+    document.getElementsByClassName("own-circle-size")[index].innerHTML = movie_list[index]["likes"]; //JSON.parse(localStorage.getItem(ls_key))["likes"];
 
 }
 
@@ -87,7 +87,7 @@ const CreateMovieCards = () => {
                         </svg>
                     </div>
     
-                    <span class="own-circle-size align-self-center text-center my-1 mx-auto m-2 m-md-0">${ls_movie_list["likes"]}</span>
+                    <span class="own-circle-size align-self-center text-center my-1 mx-auto m-2 m-md-0">${movie["likes"]}</span>
                 </div>    
             </div>
         </div>    
