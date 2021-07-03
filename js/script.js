@@ -1,5 +1,5 @@
 var movie_list = JSON.parse(movies); // convert string into an object
-var movie_list_sorted = movie_list;
+const movie_list_backup = JSON.parse(movies);
 
 function IncreaseLikes(index) {
     // increase current like by 1
@@ -14,13 +14,29 @@ function IncreaseLikes(index) {
 }
 
 var is_sort = false;
+var iclick = 0; // count current click
 function SortMovies() {
-    is_sort = true;
-    movie_list.sort((a, b) => {
-        return b["likes"] - a["likes"];
-    }); 
+    console.log(sort_id_element.getElementsByClassName("path"));
+    switch (iclick%3) {
+        case 0: // high to low
+            is_sort = true;
+            movie_list.sort((a, b) => {
+                return b["likes"] - a["likes"];
+            });            
+            break;
+        case 1: // low to high
+            is_sort = true;
+            movie_list.sort((a, b) => {
+                return a["likes"] - b["likes"];
+            });          
+            break;
+        default: // restored
+            is_sort = false;
+            movie_list = movie_list_backup;
+    }
 
     CreateMovieCards();
+    iclick++;
 }
 
 
