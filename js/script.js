@@ -55,7 +55,6 @@ function SortMovies() {
         case 2: // default
             localstorage_movie_list = movie_list_backup;
             is_sort = false;
-            console.log(false);
             // set correct icon
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
             <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
@@ -68,9 +67,9 @@ function SortMovies() {
             icon_id_element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
             <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/>
             </svg>`;            
-            iclick = 0;         
+            // iclick = 0;         
     }
-    console.log(localStorage["iclick"], Number(localStorage["iclick"])%3);
+    // console.log(localStorage["iclick"], Number(localStorage["iclick"])%3); // for debugging sort error
     iclick++;
     localStorage.setItem("iclick", iclick);
     // parse back to storage
@@ -92,7 +91,7 @@ const CreateMovieCards = () => {
         // Fixed solution because time...
         movie_string += `
         <div class="col-md-4 my-auto">
-            <img src="${movie["image"]}" class="img-fluid card-img" alt="${movie["moviename"]}">
+            <img src="${movie["image"]}" class="img-fluid" alt="${movie["moviename"]}">
         </div>
         <div class="col-md-8 m-0 p-0">
             <div class="card-body m-0 p-2">
